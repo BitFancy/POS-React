@@ -1,14 +1,15 @@
 {
-  "name": "dreampos",
+  "name": "react-electron",
   "version": "0.1.0",
   "homepage": "",
   "private": true,
+  "main": "electron/main.js",
   "scripts": {
     "start": "webpack-dev-server --mode development --inline --progress",
     "build": "webpack --mode production",
     "dev": "webpack-dev-server",
     "production": "webpack --mode production",
-    "electron-start": "electron ."
+    "electron:start": "concurrently \"yarn start\" \"wait-on http://localhost:8002 && electron .\""
   },
   "keywords": [
     "reactjs",
@@ -107,6 +108,7 @@
     "@babel/preset-react": "^7.10.4",
     "babel-loader": "^8.1.0",
     "clean-webpack-plugin": "^3.0.0",
+    "concurrently": "^8.2.2",
     "css-loader": "^5.2.7",
     "csv-loader": "^3.0.3",
     "electron": "^27.1.2",
@@ -118,6 +120,7 @@
     "style-loader": "^2.0.0",
     "uglifyjs-webpack-plugin": "^2.2.0",
     "url-loader": "^4.1.0",
+    "wait-on": "^7.2.0",
     "webpack": "^4.46.0",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0",
